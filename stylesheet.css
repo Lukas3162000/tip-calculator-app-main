@@ -36,6 +36,24 @@ html{
     margin-bottom: 1.5rem;
 }
 
+#billInput input{
+    background-color: #F3F8FB;
+    border: none;
+    height: 2rem;
+    border-radius: 6px;
+}
+
+#billInput input::placeholder{
+  color: #9EB2B3;
+  padding-left: 0.75rem;
+  font-family: Space mono;
+  font-size: 1rem;
+}
+
+
+
+
+
 .Selection{
     display: flex;
     flex-direction: column;
@@ -44,14 +62,72 @@ html{
 
 .SelectionInputs{
     display: grid;
-    grid-template-areas: "A A A";
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+
+}
+
+.SelectionInputs button, 
+.SelectionInputs input{
+    background-color: #004d45;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-family: Space Mono;
+}
+
+.SelectionInputs button:hover{
+background-color: #a1e7df;
+color: #004d45;
+}
+
+.SelectionInputs input:hover{
+    background-color: #a1e7df;
+    color: #004d45;
+}
+
+.SelectionInputs input::-webkit-outer-spin-button,
+.SelectionInputs input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.SelectionInputs input{
+-moz-appearance: textfield;
+}
+
+.SelectionInputs input::placeholder{
+color: #ffffff;
+}
+
+.SelectionInputs input:focus{
+outline: 2px solid #5FABA1;
+background-color: #F3F8FB;
+color: #004d45;
+}
+
+.custom-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.custom-input input {
+    text-align: center;
+    padding-right: 25px;
+    width: 100%;
+}
+
+.custom-input span{
+    position: absolute;
+    right: 10px;
+    color: white;
+    pointer-events: none;
 }
 
 
-#customInput{
-    grid-area: A;
-}
-
-.DisplaySide{
-    grid-area: B;
-}
