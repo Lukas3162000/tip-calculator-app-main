@@ -8,16 +8,34 @@
 }
 
 html{
-    font-family: Space Mono;
+    font-family: "Space Mono";
     font-size: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100svh;
+    background-color: var(--LightGrayishCyan);
+}
+
+:root{
+/*Colors*/
+/*Primary*/
+--StrongCyan: hsl(172,67%,45%);
+
+/*Neutral*/
+--VeryDarkCyan: hsl(183,100%,15%);
+--DarkGrayishCyan: hsl(186,14%,43%);
+--GrayishCyan: hsl(184,14%,56%);
+--LightGrayishCyan: hsl(185,41%,84%);
+--White: hsl(0,0%,100%);
+--PaleBlue: hsl(236,100%,87%);
+
+/*Secondary*/
+--Grey: hsl(210,25%,98%);
 }
 
 .Container{
-    background-color: red;
+    background-color: var(--White);
     border-radius: 1rem;
     display: grid;
     grid-template:"A B";
@@ -26,8 +44,7 @@ html{
 }
 
 .InputSide{
-    grid-area: A;
-    padding: 26px;
+    padding: 1rem;
 }
 
 #billInput{
@@ -37,18 +54,60 @@ html{
 }
 
 #billInput input{
-    background-color: #F3F8FB;
+    background-color: var(--Grey);
     border: none;
     height: 2rem;
     border-radius: 6px;
+    text-align: right;
+    font-family: "Space mono";
+    font-size: 1rem;
+    padding-right: 1.5rem;
 }
 
 #billInput input::placeholder{
-  color: #9EB2B3;
-  padding-left: 0.75rem;
-  font-family: Space mono;
+  color: var(--DarkGrayishCyan);
+  font-family: "Space mono";
   font-size: 1rem;
 }
+
+#billInput input:hover{
+    outline: 2px solid var(--StrongCyan);
+}
+
+#billInput input::-webkit-outer-spin-button,
+#billInput input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+#billInput input:focus{
+    outline: 2px solid var(--StrongCyan);
+    color: var(--VeryDarkCyan);
+}
+
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container input {
+    text-align: center;
+    padding-right: 25px;
+    width: 100%;
+}
+
+.input-container span{
+    position: absolute;
+    left: 10px;
+    color: var(--DarkGrayishCyan);
+    pointer-events: none;
+}
+
+
+
+
 
 
 
@@ -69,8 +128,8 @@ html{
 
 .SelectionInputs button, 
 .SelectionInputs input{
-    background-color: #004d45;
-    color: #FFFFFF;
+    background-color: var(--VeryDarkCyan);
+    color: var(--White);
     border: none;
     padding: 10px;
     text-align: center;
@@ -78,17 +137,17 @@ html{
     cursor: pointer;
     border-radius: 5px;
     width: 100%;
-    font-family: Space Mono;
+    font-family: "Space Mono";
 }
 
 .SelectionInputs button:hover{
-background-color: #a1e7df;
-color: #004d45;
+background-color: var(--StrongCyan);
+color: var(--VeryDarkCyan);
 }
 
 .SelectionInputs input:hover{
-    background-color: #a1e7df;
-    color: #004d45;
+    background-color: var(--StrongCyan);
+    color: var(--VeryDarkCyan);
 }
 
 .SelectionInputs input::-webkit-outer-spin-button,
@@ -102,13 +161,13 @@ margin: 0;
 }
 
 .SelectionInputs input::placeholder{
-color: #ffffff;
+color: var(--White);
 }
 
 .SelectionInputs input:focus{
-outline: 2px solid #5FABA1;
-background-color: #F3F8FB;
-color: #004d45;
+outline: 2px solid var(--StrongCyan);
+background-color: var(--Grey);
+color: var(--VeryDarkCyan);
 }
 
 .custom-input {
@@ -126,8 +185,52 @@ color: #004d45;
 .custom-input span{
     position: absolute;
     right: 10px;
-    color: white;
+    color: var(--White);
     pointer-events: none;
 }
 
 
+
+
+
+
+
+
+
+#PeopleNumber{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+#PeopleNumber input{
+    background-color: var(--Grey);
+    border: none;
+    height: 2rem;
+    border-radius: 6px;
+    text-align: right;
+    font-family: "Space mono";
+    font-size: 1rem;
+    padding-right: 1.5rem;
+}
+
+#PeopleNumber input::placeholder{
+  color: var(--DarkGrayishCyan);
+  font-family: "Space mono";
+  font-size: 1rem;
+}
+
+#PeopleNumber input:hover{
+    outline: 2px solid var(--StrongCyan);
+}
+
+#PeopleNumber input::-webkit-outer-spin-button,
+#PeopleNumber input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+#PeopleNumber input:focus{
+    outline: 2px solid var(--StrongCyan);
+    color: var(--VeryDarkCyan);
+}
