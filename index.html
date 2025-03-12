@@ -23,13 +23,13 @@
       <div class="Selection">
         <p>Select Tip %</p>
         <div class="SelectionInputs">
-          <button>5%</button>
-          <button>10%</button>
-          <button>15%</button>
-          <button>25%</button>
-          <button>50%</button>
+          <button class="tipButton" onclick="addFive()">5%</button>
+          <button class="tipButton" onclick="addTen()">10%</button>
+          <button class="tipButton" onclick="addFifteen()">15%</button>
+          <button class="tipButton" onclick="addTwentyFive()">25%</button>
+          <button class="tipButton" onclick="addFifty()">50%</button>
           <div class="custom-input">
-            <Input type="number" placeholder="Custom" id="customInput">
+            <Input type="number" placeholder="Custom" id="tip">
             <span>%</span>
           </div>
         </div>
@@ -37,29 +37,29 @@
 
       <form id="PeopleNumber">
         <label for="InputNumber">Number of People</label>
-        <input type="number" id="InputNumber" placeholder="STK" min="0" step="1">
+        <input type="number" id="people" placeholder="STK" min="0" step="1">
       </form>
     	
   </div>
   <div class="DisplaySide">
 
-    <div class="TipAmount" id="tipAmount">
+    <div class="TipAmount">
       <div class="Text">
         <h2>Tip Amount</h2>
         <p>/ person</p>
       </div>
       <div class="Numbers">
-        <h1>$0.00</h1>
+        <h1 id="tipAmount">$0.00</h1>
       </div>
     </div>
 
-    <div class="TipAmount" id="total">
+    <div class="TipAmount">
       <div class="Text">
         <h2>Total</h2>
         <p>/ person</p>
       </div>
       <div class="Numbers">
-        <h1>$0.00</h1>
+        <h1 id="totalAmount">$0.00</h1>
       </div>
     </div>
 
@@ -67,6 +67,8 @@
 
   </div>
 </div>
+
+<script src="app2.js"></script>
   
 
 </body>
