@@ -1,50 +1,47 @@
-/*document.getElementById("bill").addEventListener("input", function(){
-    let Bill = this.value;
-    let Text = document.querySelector(".Selection p");
-}) */
+document.addEventListener("DOMContentLoaded", function() {
 
-let Bill;
-let tip = 0;
-let NumberOfPeople;
+let tipPercent = 0;
+let bill;
+let persons;
 
-//Bill
-document.getElementById("bill").addEventListener("input", function(event){
-    Bill = event.target.value;
-    console.log(Bill);
+let tipInputfield = document.getElementById("tip");
+
+//Buttons mit setter
+document.getElementById("tipButton5").addEventListener("click", () => setTip(5));
+document.getElementById("tipButton10").addEventListener("click", () => setTip(10));
+document.getElementById("tipButton15").addEventListener("click", () => setTip(15));
+document.getElementById("tipButton25").addEventListener("click",() => setTip(25));
+document.getElementById("tipButton50").addEventListener("click",() => setTip(50));
+ 
+//setter
+function setTip(percent){
+    tipPercent = percent;
+    calculateTip();
+}
+
+
+function calculateTip(){
+    bill = parseFloat(document.getElementById("bill").value) || 0;
+    persons = parseFloat(document.getElementById("people").value) || 1;
+
+    if(document.activeElement === tipInputfield){
+    tipPercent = parseFloat(tipInputfield.value) || 0;
+    }
+
+    
+    let tipTotal = bill * (tipPercent/100);
+    let TotalAmount = (bill + tipTotal);
+
+    let tipPerson = (tipTotal/persons);
+    let amountPerson = (TotalAmount/persons);
+
+    document.getElementById("tipAmount").innerHTML = "$ " + tipPerson;
+    document.getElementById("totalAmount").innerHTML = "$ " + amountPerson;
+}
+
+document.getElementById("bill").addEventListener("input", calculateTip);
+document.getElementById("tip").addEventListener("input", calculateTip);
+document.getElementById("people").addEventListener("input", calculateTip);
+
+
 });
-
-//Tip
-const tipButtons = document.querySelectorAll(".tipButton");
-const customTipInput = document.getElementById("customInput");
-
-tipButtons.forEach(button => {
-    button.addEventListener("click", function(){
-        const percentage = parseInt(button.textContent);
-        tip = percentage;
-        console.log(tip);
-    })
-})
-
-customTipInput.addEventListener("input",function(event){
-tip = event.target.value;
-console.log(tip);
-})
-
-//People
-
-document.getElementById("InputNumber").addEventListener("input", function(event){
-NumberOfPeople = event.target.value;
-})
-
-
-//Logic
-
-let TipView;
-let TipValue;
-TipValue = Bill*tip;
-console.log(TipValue);
-
-TipView = document.querySelector(".Numbers h1").textContent;
-
-
-
