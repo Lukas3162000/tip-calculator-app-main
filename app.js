@@ -19,6 +19,10 @@ function setTip(percent){
     calculateTip();
 }
 
+function roundToTwo(number){
+    return Math.round(number*100)/100;
+}
+
 
 function calculateTip(){
     bill = parseFloat(document.getElementById("bill").value) || 0;
@@ -32,8 +36,8 @@ function calculateTip(){
     let tipTotal = bill * (tipPercent/100);
     let TotalAmount = (bill + tipTotal);
 
-    let tipPerson = (tipTotal/persons);
-    let amountPerson = (TotalAmount/persons);
+    let tipPerson = roundToTwo(tipTotal/persons);
+    let amountPerson = roundToTwo(TotalAmount/persons);
 
     document.getElementById("tipAmount").innerHTML = "$ " + tipPerson;
     document.getElementById("totalAmount").innerHTML = "$ " + amountPerson;

@@ -234,3 +234,21 @@ margin: 0;
     outline: 2px solid var(--StrongCyan);
     color: var(--VeryDarkCyan);
 }
+
+
+
+
+.DisplaySide{
+    background-color: var(--VeryDarkCyan);
+    color: var(--White);
+    padding: 60px 42px 42px 42px;
+    border-radius: 12px;
+
+}
+.DisplaySide .Text p{
+    color: var(--GrayishCyan);
+}
+
+.DisplaySide .Numbers{
+    color: var(--StrongCyan);
+}
