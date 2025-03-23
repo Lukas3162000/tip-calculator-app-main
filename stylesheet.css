@@ -34,11 +34,21 @@ html{
 --Grey: hsl(210,25%,98%);
 }
 
+.heading{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    font-size: 1.2rem;
+    letter-spacing: 0.35rem;
+    color: var(--VeryDarkCyan);
+}
+
 .Container{
     background-color: var(--White);
     border-radius: 1rem;
     display: grid;
-    grid-template:"A B";
+    grid-template-columns: 1fr 1fr;
+
     padding: 0.67rem;
     max-width: 920px;
 }
@@ -243,12 +253,72 @@ margin: 0;
     color: var(--White);
     padding: 60px 42px 42px 42px;
     border-radius: 12px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.TipAmount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
 }
+
+.DisplaySide .Text h2{
+    font-size: 0.71rem;
+}
+
 .DisplaySide .Text p{
     color: var(--GrayishCyan);
+    font-size: 0.59rem;
 }
 
 .DisplaySide .Numbers{
     color: var(--StrongCyan);
+    font-size: 1rem;
+}
+
+.ResetBtn{
+width: 100%;
+margin-top: auto;
+height: 50px;
+border-radius: 6px;
+border: none;
+cursor: pointer;
+background-color: #26C2AD;
+font-weight: 700;
+font-size: 0.83rem;
+color: var(--VeryDarkCyan);
+}
+.ResetBtn:hover{
+    background-color: var(--LightGrayishCyan);
+}
+
+
+.input-container2{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container2 input{
+    text-align: center;
+    width: 100%;
+}
+
+.input-container2 span{
+position: absolute;
+left: 10px;
+}
+
+
+
+
+@media (max-width: 750px) {
+    .Container{
+    grid-template-columns: 1fr;
+    }
 }

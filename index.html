@@ -9,6 +9,10 @@
 </head>
 <body>
 
+<div>
+  <h1 class="heading">SPLI<br>TTER</h1>
+</div>
+
 <div class="Container">
   <div class="InputSide">
 
@@ -37,7 +41,10 @@
 
       <form id="PeopleNumber">
         <label for="InputNumber">Number of People</label>
-        <input type="number" id="people" placeholder="STK" min="0" step="1">
+        <div class="input-container2">
+          <span class="PersonIcon"><img src="images\icon-person.svg" alt="Perosn_icon"></span>
+          <input type="number" id="people" placeholder="0" min="0" step="1">
+        </div>
       </form>
     	
   </div>
@@ -63,7 +70,7 @@
       </div>
     </div>
 
-    <button class="ResetBtn">Reset</button>
+    <button class="ResetBtn" onclick="location.reload()">RESET</button>
 
   </div>
 </div>
